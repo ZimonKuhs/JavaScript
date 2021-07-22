@@ -12,7 +12,7 @@
         "node": true
     },
 
-    "plugins": ["import", "node", "promise"],
+    "plugins": ["html", "import", "node", "promise"],
 
     "globals": {
         "document": "readonly",
@@ -125,6 +125,7 @@
         "new-parens": "error",
         "no-array-constructor": "error",
         "no-async-promise-executor": "error",
+        "no-buffer-constructor": "error",
         "no-caller": "error",
         "no-case-declarations": "error",
         "no-class-assign": "error",
