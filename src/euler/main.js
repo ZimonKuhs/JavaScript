@@ -5,12 +5,13 @@
  *  @date   2021-07-23
  */
 
+import util from "util"
 import importModules from "import-modules"
 
 importModules(".")
 
-args = process.argv
-argc = length(args)
+const args = process.argv
+const argc = args.length
 
 if (argc <= 2) {
     usageError()
@@ -24,6 +25,8 @@ if (isNaN(number)) {
 if (argc > 3) {
     console.warn("Ignoring " + (argc - 3) + " superfluous arguments.")
 }
+
+console.log(eval(util.format("euler%d()", number)))
 
 /**
  *  Terminates the program with usage message.
