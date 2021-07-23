@@ -1,4 +1,4 @@
-/*
+/**
  *  Stream sandboxing.
  *
  *  @author Zimon Kuhs
