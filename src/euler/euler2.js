@@ -8,10 +8,16 @@
  *  @solution:  233168
  */
 
-console.log(solve())
+export { solve as euler2 }
 
+/**
+ * Solves the problem of finding the sum of all even fibonacci numbers
+ * lower than 4e6.
+ *
+ * @returns The solution to the specified problem.
+ */
 function solve() {
-    Math.sum(fibonacci((x) => x & -x))
+    return Math.sum(fibonacci(4e6, (x) => x & -x))
 }
 
 function fibonacci(ceiling, filter = (x) => true) {
@@ -27,7 +33,7 @@ function fibonacci(ceiling, filter = (x) => true) {
 
     while (third < ceiling) {
         if (filter(third)) {
-            third.push(third)
+            numbers.push(third)
         }
 
         first = second
