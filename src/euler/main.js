@@ -24,9 +24,10 @@ if (argc > 3) {
     console.warn("Ignoring " + (argc - 3) + " superfluous arguments.")
 }
 
-let name = util.format("euler%d.solve()", number)
-let imports = await importFolder()
-console.log(imports[0].solve())
+let eulerName = util.format("euler%d", number)
+let solver = (await importFolder())[0][eulerName]
+
+solver.call()
 
 /**
  *  Recursively imports euler problems from the specified folder.
