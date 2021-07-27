@@ -30,7 +30,7 @@ let solver = (await utility.importFolder("./src/euler", isEulerFile))[0][
     eulerName
 ]
 
-solver.call()
+console.log(solver.call())
 
 /**
  *  Checks whether a file name is on the format "euler\\d+.[<possible extension>]".

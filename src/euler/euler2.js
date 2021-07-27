@@ -5,32 +5,37 @@
  *
  *  @author:    Zimon Kuhs
  *  @date:      2021-07-19
- *  @solution:  233168
+ *  @solution:  4613732
  */
 
 export { solve as euler2 }
 
 /**
- * Solves the problem of finding the sum of all even fibonacci numbers
- * lower than 4e6.
+ *  Solves the problem of finding the sum of all even fibonacci numbers
+ *  lower than 4e6.
  *
- * @returns The solution to the specified problem.
+ *  @returns The solution to the specified problem.
  */
 function solve() {
-    console.log("HEREIAM")
-    return Math.sum(fibonacci(4e6, (x) => x & -x))
+    return fibonacci(4e6, (x) => !(x & 1)).reduce((a, b) => a + b, 0)
 }
 
-function fibonacci(ceiling, filter = (x) => true) {
-    let first = 1,
-        second = 1
-    const numbers = [first, second]
-
-    if (ceiling <= 1) {
-        return numbers
+/**
+ *  Generates Fibonacci numbers.
+ *
+ *  @param   ceiling The inclusive, maximum value.
+ *  @param   filter  An inclusive filter for the numbers.
+ *  @returns All fibonacci numbers fulfilling the specifications.
+ */
+function fibonacci(ceiling = 1e6, filter = (x) => true) {
+    if (ceiling <= 0) {
+        return []
     }
 
-    let third = first + second
+    let numbers = []
+    let first = 0,
+        second = 0,
+        third = 1
 
     while (third < ceiling) {
         if (filter(third)) {
@@ -39,6 +44,7 @@ function fibonacci(ceiling, filter = (x) => true) {
 
         first = second
         second = third
+        third = first + second
     }
 
     return numbers
