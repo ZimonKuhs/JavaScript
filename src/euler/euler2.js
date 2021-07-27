@@ -17,6 +17,7 @@ export { solve as euler2 }
  * @returns The solution to the specified problem.
  */
 function solve() {
+    console.log("HEREIAM")
     return Math.sum(fibonacci(4e6, (x) => x & -x))
 }
 
