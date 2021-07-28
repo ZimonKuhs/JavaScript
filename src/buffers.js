@@ -1,4 +1,4 @@
-/*
+/**
  *  Buffer sandboxing.
  *
  *  N.B. Opting to use new buffer logic as old behavior was deprecated in Node.js 10.

@@ -1,4 +1,4 @@
-/*
+/**
  *  Event sandboxing.
  *
  *  @author Zimon Kuhs
