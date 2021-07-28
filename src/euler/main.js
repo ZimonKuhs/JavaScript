@@ -1,6 +1,7 @@
 /**
  *  Euler problems' entry point.
  *
+ *
  *  @author Zimon Kuhs
  *  @date   2021-07-23
  */
@@ -21,16 +22,16 @@ if (isNaN(number)) {
     usageError()
 }
 
+//  TODO: Take multiple arguments to solve multiple problems one after another?
 if (argc > 3) {
     console.warn("Ignoring " + (argc - 3) + " superfluous arguments.")
 }
 
 let eulerName = util.format("euler%d", number)
-let solver = (await utility.importFolder("./src/euler", isEulerFile))[0][
-    eulerName
-]
+let problems = await utility.importFolder("./src/euler", isEulerFile)
 
-console.log(solver.call())
+console.log(problems[eulerName].solve.call())
+console.log("Finished solving problems.")
 
 /**
  *  Checks whether a file name is on the format "euler\\d+.[<possible extension>]".

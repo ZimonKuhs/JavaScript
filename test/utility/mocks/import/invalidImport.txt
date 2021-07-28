@@ -1,0 +1,6 @@
+/**
+ *  A dummy file that should not be included among imports.
+ *
+ *  @author Zimon Kuhs
+ *  @date   2021-07-28
+ */
