@@ -8,20 +8,20 @@
  *  @solution:  4613732
  */
 
-export { solve as euler2 }
-
 /**
  *  Solves the problem of finding the sum of all even fibonacci numbers
  *  lower than 4e6.
  *
  *  @returns The solution to the specified problem.
  */
-function solve() {
+export default function solve() {
     return fibonacci(4e6, (x) => !(x & 1)).reduce((a, b) => a + b, 0)
 }
 
 /**
  *  Generates Fibonacci numbers.
+ *
+ *  TODO: Should probably be moved to a math utility module.
  *
  *  @param   ceiling The inclusive, maximum value.
  *  @param   filter  An inclusive filter for the numbers.
