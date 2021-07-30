@@ -39,10 +39,7 @@ describe("Import folder.", async () => {
     //  TODO:   Should it, though?
     //          Also, figure out how to check error message unless needlessly verbose.
     it("Asking to import a non-folder should yield an error.", () => {
-        assert.rejects(
-            async () =>
-                await importFolder("test/utility/mocks/import/importFile1.js")
-        )
+        assert.rejects(async () => await importFolder("test/utility/mocks/import/importFile1.js"))
     })
 
     it("Importing with invalid path should yield an error.", async () => {

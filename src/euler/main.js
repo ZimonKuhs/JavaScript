@@ -6,9 +6,9 @@
  *  @date   2021-07-23
  */
 
-import utility from "../utility/index.js"
 import process from "process"
 import util from "util"
+import utility from "../utility/index.js"
 
 const args = process.argv
 const argc = args.length

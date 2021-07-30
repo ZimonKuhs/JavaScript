@@ -15,7 +15,7 @@
  *  @returns The solution to the specified problem.
  */
 export default function solve() {
-    return fibonacci(4e6, (x) => !(x & 1)).reduce((a, b) => a + b, 0)
+    return fibonacci(4e6, x => !(x & 1)).reduce((a, b) => a + b, 0)
 }
 
 /**
@@ -27,7 +27,7 @@ export default function solve() {
  *  @param   filter  An inclusive filter for the numbers.
  *  @returns All fibonacci numbers fulfilling the specifications.
  */
-function fibonacci(ceiling = 1e6, filter = (x) => true) {
+function fibonacci(ceiling = 1e6, filter = x => true) {
     if (ceiling <= 0) {
         return []
     }
