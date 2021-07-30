@@ -16,9 +16,18 @@ export function filledArray(object, size) {
         throw new ValueError("An array has to have a non-zero, positive size!")
     }
 
+    let converter = undefined
+    switch (typeof object) {
+        case "object":
+            converter = Object.assign
+
+        default:
+            converter = x => x
+    }
+
     const array = []
     for (let i = 0; i < size; ++i) {
-        array[i] = Object.assign(object)
+        array[i] = converter(object)
     }
 
     return array

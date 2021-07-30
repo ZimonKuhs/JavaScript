@@ -16,25 +16,29 @@ import utility from "../utility/index.js"
  *  @returns The solution to the specified problem.
  */
 export default function solve() {
-    return Math.max(sieve(Math.sqrt(600851475143)))
+    return Math.max(sieve(600851475143))
 }
 
 function sieve(number) {
-    if (number <= 1) {
+    if (number < 4) {
         return []
     }
+    const size = Math.ceil(Math.sqrt(number))
+    const sieve = utility.filledArray(true, size)
 
-    const sieve = utility.filledArray(true, number)
-
-    for (let i = 2; i < Math.sqrt(number); ++i) {
+    for (let i = 2; i * i <= size; ++i) {
         if (!sieve[i]) {
             continue
         }
 
-        for (let j = i * i; j < number; j += i) {
+        for (let j = i * i; j <= size; j += i) {
             sieve[j] = false
         }
     }
 
-    return sieve.map.reduce((highest, current) => (current > highest ? current : highest))
+    return sieve.reduce((highest, isPrime, index) => {
+        if (index === 6857) {
+        }
+        return isPrime && number % index == 0 && index > highest ? index : highest
+    }, 0)
 }
