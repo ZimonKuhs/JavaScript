@@ -37,8 +37,6 @@ function sieve(number) {
     }
 
     return sieve.reduce((highest, isPrime, index) => {
-        if (index === 6857) {
-        }
         return isPrime && number % index == 0 && index > highest ? index : highest
     }, 0)
 }
